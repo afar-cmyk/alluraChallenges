@@ -1,7 +1,26 @@
+main {
+  display: flex;
+  column-gap: 4em;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+
 .contenedor-usuario{
+  display: flex;
+  flex-direction: column;
+  width: 30%;
   margin-bottom: 3rem;
 }
 
 .contenedor-encriptado{
+  display: flex;
+  flex-direction: column;
+  width: 30%;
   margin-bottom: 3rem;
+}
+
+footer {
+  text-align: center;
+  font-size: 0.7rem;
 }
