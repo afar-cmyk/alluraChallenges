@@ -91,10 +91,7 @@ textarea:focus {
 }
 
 .borrar {
-  border: solid;
-  border-radius: 5px;
-  border-width: 0.2em;
-  border-color: #da373c;
+  box-shadow: inset 0px 0px 0px 1px #da373c;
   background-color: transparent;
   color: #ffffff;
 }
