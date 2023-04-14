@@ -91,11 +91,16 @@ textarea:focus {
 }
 
 .borrar {
-  background-color: #da373c;
+  border: solid;
+  border-radius: 5px;
+  border-width: 0.2em;
+  border-color: #da373c;
+  background-color: transparent;
+  color: #ffffff;
 }
 
 .borrar:hover {
-  background-color: #b12b2b;
+  background-color: #da373c;
 }
 
 footer {
