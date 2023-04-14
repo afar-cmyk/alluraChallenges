@@ -9,20 +9,22 @@
 </head>
 <body>
   <main>
-    <div class="contenedor-usuario">
-      <textarea placeholder="Ingrese el texto aqui"></textarea>
-      <button>Encriptar</button>
-      <button>Desencriptar</button>
-    </div>
-  
-    <div class="contenedor-encriptado">
-      <textarea></textarea>
-      <button>copiar</button>
+    <div class="interfaz-usuario">
+      <div class="contenedor">
+        <textarea placeholder="Ingrese el texto aqui"></textarea>
+        <div class="seccion-botones">
+          <button class="boton">Encriptar</button>
+          <button class="boton desencriptar">Desencriptar</button>
+          <button class="boton borrar">Limpiar</button>
+        </div>
+      </div>
+      <div class="contenedor" id="contenedor-desencriptar">
+      </div>
     </div>
   </main>
   <footer>
     <span>Desarrollado por Andrés Felipe Álvarez. todos los derechos reservados.</span>
-  </footer>
+  </footer> 
 </body>
 <script src="script.js"></script>
 </html>
