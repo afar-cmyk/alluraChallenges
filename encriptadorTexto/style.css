@@ -33,10 +33,6 @@ main {
   row-gap: 1em;
 }
 
-#contenedor-desencriptar {
-  display: none;
-}
-
 textarea {
   width: 90%;
   height: 70%;
@@ -65,7 +61,7 @@ textarea:focus {
 .boton {
   background-color: #5865f2;
   border-radius: 5px;
-  color: #ffffff;
+  color: #e7e7e7;
   height: fit-content;
   padding: 0 19px;
   font-family: 'gg sans';
@@ -93,11 +89,48 @@ textarea:focus {
 .borrar {
   box-shadow: inset 0px 0px 0px 1px #da373c;
   background-color: transparent;
-  color: #ffffff;
 }
 
 .borrar:hover {
   background-color: #da373c;
+}
+
+#sin-ejecutar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  column-gap: 1em;
+}
+
+#sin-ejecutar div {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  width: 40%;
+}
+
+#sin-ejecutar img {
+  width: 48%;
+}
+
+#sin-ejecutar h2 {
+  font-family: 'gg sans';
+  font-style: normal;
+  font-size: 27px;
+  font-weight: 600;
+  color: #dbdbdb;
+  text-align: center;
+}
+
+#sin-ejecutar p {
+  font-family: 'gg sans';
+  font-style: normal;
+  font-size: 16px;
+  font-weight: 400;
+  color: #bbbbbb;
+  text-align: center;
 }
 
 footer {
