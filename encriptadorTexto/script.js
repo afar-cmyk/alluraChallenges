@@ -8,6 +8,7 @@ const criptos = {
 }
 
 let inputTextoEncriptado = document.getElementById('inputTextoEncriptado');
+let inputEncriptador = document.getElementById('inputEncriptador');
 
 // Controla la visibilidad de la seccion que muestra el texto encriptado
 function cambiarEstadoInterfaz(estado1, estado2) {
@@ -52,26 +53,47 @@ function conseguirTexto(idCajaTexto) {
   });
 }
 
+//===================================================================
+
 //funcionalidades del boton encriptar
 const botonEncriptar = document.getElementById("botonEncriptar");
 
 botonEncriptar.addEventListener("click", async function() {
-  console.log("Hola mundo desde boton encriptar");
+  let texto = await conseguirTexto("inputEncriptador");
+
+  inputTextoEncriptado.value = texto;
+  inputTextoEncriptado.dispatchEvent(new Event('input'));
 });
+
+//===================================================================
 
 //funcionalidades del boton desencriptar
 const botonDesencriptar = document.getElementById("botonDesencriptar");
 
 botonDesencriptar.addEventListener("click", async function() {
-  console.log("Hola mundo desde boton desencriptar");
+  let texto = await conseguirTexto("inputEncriptador");
+
+  inputTextoEncriptado.value = texto;
+  inputTextoEncriptado.dispatchEvent(new Event('input'));
 });
+
+//===================================================================
 
 //funcionalidades del boton borrar
 const botonBorrar = document.getElementById("botonBorrar");
 
 botonBorrar.addEventListener("click", async function() {
-  console.log("Hola mundo desde boton borrar en la seccion principal");
+  inputEncriptador.value = "";
+  inputEncriptador.dispatchEvent(new Event('input'));
+
+  inputEncriptador.style.border = "solid thin #da373c"
+  setTimeout(()=> {
+    inputEncriptador.style.border = "initial"
+ }
+ ,250);
 });
+
+//===================================================================
 
 //funcionalidades del boton copiar en la interfaz del mensaje encriptado
 const botonCopiar = document.getElementById("botonCopiar");
@@ -85,6 +107,8 @@ botonCopiar.addEventListener("click", async function() {
  ,250);
 });
 
+//===================================================================
+
 //funcionalidades del boton borrar en la interfaz del mensaje encriptado
 const botonBorrarEncriptado = document.getElementById("botonBorrarEncriptado");
 
@@ -92,6 +116,8 @@ botonBorrarEncriptado.addEventListener("click", async function() {
   inputTextoEncriptado.value = "";
   inputTextoEncriptado.dispatchEvent(new Event('input'));
 });
+
+//===================================================================
 
 //funcionalidades del boton de prueba
 const botonDebug = document.getElementById("debug1");
@@ -102,6 +128,9 @@ botonDebug.addEventListener("click", async function() {
   console.log(await conseguirTexto("inputEncriptador"));
 });
 
+
+//===================================================================
+
 const botonDebug2 = document.getElementById("debug2");
 botonDebug2.addEventListener("click", async function() {
   let texto = await conseguirTexto("inputEncriptador");
@@ -111,6 +140,8 @@ botonDebug2.addEventListener("click", async function() {
 
   console.log(await conseguirTexto("inputTextoEncriptado"));
 });
+
+//===================================================================
 
 console.log('hola mundo desde archivo script')
 console.log(criptos.a)
