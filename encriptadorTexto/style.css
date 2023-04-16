@@ -56,6 +56,7 @@ textarea {
   font-size: 16px;
   color: #cccccc;
   box-sizing: border-box;
+  text-transform: lowercase;
 }
 
 textarea:focus { 
