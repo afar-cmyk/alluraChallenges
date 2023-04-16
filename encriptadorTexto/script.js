@@ -1,12 +1,3 @@
-// Letras que seran encriptadas y sus valores
-const criptos = {
-  'a':'un valor para a',
-  'e':'un valor para e',
-  'i':'un valor para i',
-  'o':'un valor para o',
-  'u':'un valor para u',
-}
-
 let inputTextoEncriptado = document.getElementById('inputTextoEncriptado');
 let inputEncriptador = document.getElementById('inputEncriptador');
 
@@ -53,16 +44,56 @@ function conseguirTexto(idCajaTexto) {
   });
 }
 
+// Convierte el string en un arreglo para reemplazar las vocales
+function encriptarTexto(texto) {
+  let arrayTexto = texto.split('');
+  let arrayEncriptado = [];
+
+  arrayTexto.forEach(letra => {
+    switch (letra) {
+      case 'a':
+        arrayEncriptado.push('ai');
+        break;
+      case 'e':
+        arrayEncriptado.push('enter');
+        break;
+      case 'i':
+        arrayEncriptado.push('imes');
+        break;
+      case 'o':
+        arrayEncriptado.push('ober');
+        break;
+      case 'u':
+        arrayEncriptado.push('ufat');
+        break;
+      default:
+        arrayEncriptado.push(letra);
+        break;
+    }
+  });
+
+  return arrayEncriptado.join('')
+}
+
 //===================================================================
 
 //funcionalidades del boton encriptar
 const botonEncriptar = document.getElementById("botonEncriptar");
 
 botonEncriptar.addEventListener("click", async function() {
+  //recibe el texto del textarea
   let texto = await conseguirTexto("inputEncriptador");
 
-  inputTextoEncriptado.value = texto;
+  //encripta el texto recibido y envia un evento
+  inputTextoEncriptado.value = encriptarTexto(texto);
   inputTextoEncriptado.dispatchEvent(new Event('input'));
+
+  //cambia de color el borde del textarea
+  inputEncriptador.style.border = "solid thin #5865f2"
+  setTimeout(()=> {
+    inputEncriptador.style.border = "initial"
+ }
+ ,250);
 });
 
 //===================================================================
@@ -123,9 +154,10 @@ botonBorrarEncriptado.addEventListener("click", async function() {
 const botonDebug = document.getElementById("debug1");
 
 botonDebug.addEventListener("click", async function() {
-  inputTextoEncriptado.value = "";
+  let texto = await conseguirTexto("inputEncriptador");
+  //encriptarTexto(texto, criptos)
+  console.log(encriptarTexto(texto));
   inputTextoEncriptado.dispatchEvent(new Event('input'));
-  console.log(await conseguirTexto("inputEncriptador"));
 });
 
 
@@ -142,12 +174,3 @@ botonDebug2.addEventListener("click", async function() {
 });
 
 //===================================================================
-
-console.log('hola mundo desde archivo script')
-console.log(criptos.a)
-console.log(criptos.e)
-console.log(criptos.i)
-console.log(criptos.o)
-console.log(criptos.u)
-
-
