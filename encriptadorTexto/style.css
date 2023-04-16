@@ -152,12 +152,13 @@ textarea:focus {
 }
 
 .copiar {
-  box-shadow: inset 0px 0px 0px 1px #5865f2;
+  box-shadow: inset 0px 0px 0px 1px #999999;;
   background-color: transparent;
 }
 
 .copiar:hover {
-  background-color: #5865f2;
+  background-color: #999999;
+  color: #000000;
 }
 
 footer {

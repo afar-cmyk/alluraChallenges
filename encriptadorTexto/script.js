@@ -158,7 +158,7 @@ botonCopiar.addEventListener("click", async function() {
   navigator.clipboard.writeText(inputTextoEncriptado.value)
 
   // Cambia de color el borde del textarea
-  inputTextoEncriptado.style.border = "solid thin #23a55a"
+  inputTextoEncriptado.style.border = "solid thin #999999"
   setTimeout(()=> {
     inputTextoEncriptado.style.border = "initial"
  }
