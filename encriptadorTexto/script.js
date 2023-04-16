@@ -21,7 +21,6 @@ inputTextoEncriptado.addEventListener('input', function() {
   }
 });
 
-
 // Lee el contenido del elemento HTML textarea por su id
 function conseguirTexto(idCajaTexto) {
   return new Promise((resolve) => {
@@ -176,3 +175,18 @@ botonBorrarEncriptado.addEventListener("click", async function() {
   inputTextoEncriptado.dispatchEvent(new Event('input'));
 });
 
+//=========================  TEXTAREA  ====================================//
+
+// Selecciona todos los textarea del sitio
+const textareas = document.querySelectorAll('textarea');
+
+// Evento que compara los caracteres especiales y los reemplaza por nada
+textareas.forEach(textarea => {
+  textarea.addEventListener('input', event => {
+    const regex = /^[A-Za-z0-9\s]*$/;
+    const value = event.target.value;
+    if (!regex.test(value)) {
+      event.target.value = value.replace(/[^\w\s]/gi, '');
+    }
+  });
+});
