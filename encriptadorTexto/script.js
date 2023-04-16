@@ -72,23 +72,35 @@ function encriptarTexto(texto) {
     }
   });
 
-  return arrayEncriptado.join('')
+  return arrayEncriptado.join('');
 }
 
-//===================================================================
+// Reemplaza cada palabra por su correspondiente vocal
+function desencriptarTexto(texto) {
+  texto = texto.replace(/ai/g, "a");
+  texto = texto.replace(/enter/g, "e");
+  texto = texto.replace(/imes/g, "i");
+  texto = texto.replace(/ober/g, "o");
+  texto = texto.replace(/ufat/g, "u");
 
-//funcionalidades del boton encriptar
+  return texto;
+}
+
+//=========================  BOTONES  ====================================//
+
+// Boton encriptar
 const botonEncriptar = document.getElementById("botonEncriptar");
 
 botonEncriptar.addEventListener("click", async function() {
-  //recibe el texto del textarea
+  // Recibe el texto del textarea
   let texto = await conseguirTexto("inputEncriptador");
 
-  //encripta el texto recibido y envia un evento
+  // Borra el textarea, encripta el texto recibido y envia un evento
+  inputTextoEncriptado.value = "";
   inputTextoEncriptado.value = encriptarTexto(texto);
   inputTextoEncriptado.dispatchEvent(new Event('input'));
 
-  //cambia de color el borde del textarea
+  // Cambia de color el borde del textarea
   inputEncriptador.style.border = "solid thin #5865f2"
   setTimeout(()=> {
     inputEncriptador.style.border = "initial"
@@ -98,25 +110,37 @@ botonEncriptar.addEventListener("click", async function() {
 
 //===================================================================
 
-//funcionalidades del boton desencriptar
+// Boton desencriptar
 const botonDesencriptar = document.getElementById("botonDesencriptar");
 
 botonDesencriptar.addEventListener("click", async function() {
+  // Recibe el texto del textarea
   let texto = await conseguirTexto("inputEncriptador");
 
-  inputTextoEncriptado.value = texto;
+  // Borra el textarea, encripta el texto recibido y envia un evento
+  inputTextoEncriptado.value = "";
+  inputTextoEncriptado.value = desencriptarTexto(texto);
   inputTextoEncriptado.dispatchEvent(new Event('input'));
+
+  // Cambia de color el borde del textarea
+  inputEncriptador.style.border = "solid thin #23a55a"
+  setTimeout(()=> {
+    inputEncriptador.style.border = "initial"
+ }
+ ,250);
 });
 
 //===================================================================
 
-//funcionalidades del boton borrar
+// Boton borrar en la interfaz principal
 const botonBorrar = document.getElementById("botonBorrar");
 
 botonBorrar.addEventListener("click", async function() {
+  // Borra el textarea
   inputEncriptador.value = "";
   inputEncriptador.dispatchEvent(new Event('input'));
 
+  // Cambia de color el borde del textarea
   inputEncriptador.style.border = "solid thin #da373c"
   setTimeout(()=> {
     inputEncriptador.style.border = "initial"
@@ -126,12 +150,15 @@ botonBorrar.addEventListener("click", async function() {
 
 //===================================================================
 
-//funcionalidades del boton copiar en la interfaz del mensaje encriptado
+// Boton copiar en la interfaz del mensaje encriptado
 const botonCopiar = document.getElementById("botonCopiar");
 
 botonCopiar.addEventListener("click", async function() {
-  inputTextoEncriptado.style.border = "solid thin #23a55a"
+  // Copia el contenido del textarea
   navigator.clipboard.writeText(inputTextoEncriptado.value)
+
+  // Cambia de color el borde del textarea
+  inputTextoEncriptado.style.border = "solid thin #23a55a"
   setTimeout(()=> {
     inputTextoEncriptado.style.border = "initial"
  }
@@ -140,37 +167,12 @@ botonCopiar.addEventListener("click", async function() {
 
 //===================================================================
 
-//funcionalidades del boton borrar en la interfaz del mensaje encriptado
+// Boton borrar en la interfaz del mensaje encriptado
 const botonBorrarEncriptado = document.getElementById("botonBorrarEncriptado");
 
 botonBorrarEncriptado.addEventListener("click", async function() {
+  // Borra el contenido del textarea
   inputTextoEncriptado.value = "";
   inputTextoEncriptado.dispatchEvent(new Event('input'));
 });
 
-//===================================================================
-
-//funcionalidades del boton de prueba
-const botonDebug = document.getElementById("debug1");
-
-botonDebug.addEventListener("click", async function() {
-  let texto = await conseguirTexto("inputEncriptador");
-  //encriptarTexto(texto, criptos)
-  console.log(encriptarTexto(texto));
-  inputTextoEncriptado.dispatchEvent(new Event('input'));
-});
-
-
-//===================================================================
-
-const botonDebug2 = document.getElementById("debug2");
-botonDebug2.addEventListener("click", async function() {
-  let texto = await conseguirTexto("inputEncriptador");
-
-  inputTextoEncriptado.value = texto;
-  inputTextoEncriptado.dispatchEvent(new Event('input'));
-
-  console.log(await conseguirTexto("inputTextoEncriptado"));
-});
-
-//===================================================================
