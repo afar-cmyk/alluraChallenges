@@ -7,7 +7,7 @@ Repositorio que almacena todos los desafios resueltos en el programa Oracle ONE.
 ## Desafios
 
 ### 1. [Encriptador y desencriptador de texto](https://afar-cmyk.github.io/oracleOneChallenges/encriptadorTexto/index.html)
- Aplicación que encripta y desencriptador textos
+ Aplicación que encripta y desencripta textos
 
  #### **Requisitos:**
  - Debe funcionar solo con letras minúsculas
