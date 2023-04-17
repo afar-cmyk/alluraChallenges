@@ -183,10 +183,10 @@ const textareas = document.querySelectorAll('textarea');
 // Evento que compara los caracteres especiales y los reemplaza por nada
 textareas.forEach(textarea => {
   textarea.addEventListener('input', event => {
-    const regex = /^[A-Za-z0-9\s]*$/;
+    const regex = /^[A-Za-z0-9ñÑ\s]*$/;
     const value = event.target.value;
     if (!regex.test(value)) {
-      event.target.value = value.replace(/[^\sa-zA-Z0-9]/gi, '');
+      event.target.value = value.replace(/[^\w\sñÑ]/gi, '');
     }
   });
 });
