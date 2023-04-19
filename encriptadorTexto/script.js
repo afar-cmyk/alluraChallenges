@@ -186,7 +186,7 @@ textareas.forEach(textarea => {
     const regex = /^[A-Za-z0-9ñÑ\s]*$/;
     const value = event.target.value;
     if (!regex.test(value)) {
-      event.target.value = value.replace(/[^\w\sñÑ]/gi, '');
+      event.target.value = value.replace(/[^\sa-zA-Z0-9\sñÑ]/gi, '');
     }
   });
 });
