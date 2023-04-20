@@ -2,23 +2,48 @@
 
 body {
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   background-color: #313338;
   margin: 0;
-  display: flex;
+  /* display: flex;
   align-items: center;
   flex-direction: column;
-  justify-content: center;
+  justify-content: center; */
+}
+
+nav {
+  position: absolute;
+  height: 60px;
+  width: 100%;
+  background-color: #1e1f22;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+nav h1 {
+  font-family: 'gg sans';
+  font-style: normal;
+  font-size: 2em;
+  font-weight: 600;
+  color: #e7e7e7;
+  pointer-events: none;
 }
 
 main {
-  height: 100%;
+  /* height: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: center; */
+  display: flex;
+  height: 100vh;
+  align-items: center;
   justify-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
 
-main h1 {
+/* main h1 {
   font-family: 'gg sans';
   font-style: normal;
   font-size: 2.3em;
@@ -26,7 +51,7 @@ main h1 {
   color: #e7e7e7;
   pointer-events: none;
   margin: 0 0 0.15em 0;
-}
+} */
 
 .interfaz-usuario {
   display: flex;
@@ -45,6 +70,14 @@ main h1 {
   align-items: center;
   justify-content: center;
   row-gap: 1em;
+}
+
+.titulo {
+  height: auto;
+}
+
+.footer {
+  height: auto;
 }
 
 textarea {
@@ -164,23 +197,23 @@ textarea:focus {
   color: #000000;
 }
 
-footer {
+/* footer {
   text-align: center;
   font-size: 0.7rem;
   font-family: 'gg sans';
   color: #999;
   position: relative;
   bottom: 2.8em;
-}
+} */
 
 @media (max-width: 1280px) {
-  main {
+  /* main {
     align-items: center;
-  }
-
+  } */
+/* 
   main h1 {
     font-size: 2.2em;
-  }
+  } */
 
   .interfaz-usuario {
     flex-direction: column;
@@ -188,13 +221,18 @@ footer {
 }
 
 @media (max-width: 480px) {
-  main h1 {
+
+  /* main {
+    justify-content: space-around;
+  } */
+
+  /* main h1 {
     font-size: 2.5em;
     width: min-content;
     text-align: center;
-    margin: 0 0 0.8em 0;
     line-height: 40px;
-  }
+    margin: 0;
+  } */
 
   .contenedor {
     width: 22em;
@@ -223,4 +261,8 @@ footer {
     font-size: 1em;
     margin: 0;
   }
+
+  /* footer {
+    bottom: auto;
+  } */
 }

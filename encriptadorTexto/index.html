@@ -9,41 +9,54 @@
 </head>
 <body>
   
-  <main>
+  <nav>
+    <div></div>
     <h1>Encriptador y desencriptador</h1>
+  </nav>
+
+  <main>
+    <!-- <h1>Encriptador y desencriptador</h1> -->
     <div class="interfaz-usuario">
-      <section class="contenedor">
+
+
+      <section >
+      <div class="contenedor">
         <textarea placeholder="Ingrese el texto aqui" id="inputEncriptador"></textarea>
         <div class="seccion-botones">
           <button class="boton" id="botonEncriptar">Encriptar</button>
           <button class="boton desencriptar" id="botonDesencriptar">Desencriptar</button>
           <button class="boton borrar" id="botonBorrar">Borrar</button>
         </div>
+      </div>
       </section>
-      <section class="contenedor" id="contenedor-desencriptar">
 
-        <div id="sin-ejecutar">
-          <img src="public/images/illustration.png" alt="Una persona sentada mirando un diamante con una lupa">
-          <div>
-            <h2>Ningún mensaje fue encontrado</h2>
-            <p>Ingresa el texto que desees encriptar o desencriptar.</p>
+      <section >
+        <div class="contenedor" id="contenedor-desencriptar">
+          <div id="sin-ejecutar">
+            <img src="public/images/illustration.png" alt="Una persona sentada mirando un diamante con una lupa">
+            <div>
+              <h2>Ningún mensaje fue encontrado</h2>
+              <p>Ingresa el texto que desees encriptar o desencriptar.</p>
+            </div>
+          </div>
+
+          <div class="contenedor" id="interfaz-encriptado">
+            <textarea id="inputTextoEncriptado"></textarea>
+            <div class="seccion-botones">
+              <button class="boton copiar" id="botonCopiar">Copiar</button>
+              <button class="boton borrar" id="botonBorrarEncriptado">Borrar</button>
+            </div>
           </div>
         </div>
-
-        <div class="contenedor" id="interfaz-encriptado">
-          <textarea id="inputTextoEncriptado"></textarea>
-          <div class="seccion-botones">
-            <button class="boton copiar" id="botonCopiar">Copiar</button>
-            <button class="boton borrar" id="botonBorrarEncriptado">Borrar</button>
-          </div>
-        </div>
-  
       </section>
+
+
     </div>
+    <!-- <footer>
+      <span>Desarrollado por Andrés Felipe Álvarez. todos los derechos reservados.</span>
+    </footer> -->
   </main>
-  <footer>
-    <span>Desarrollado por Andrés Felipe Álvarez. todos los derechos reservados.</span>
-  </footer> 
+ 
 </body>
 <script src="script.js"></script>
 </html>
