@@ -1,0 +1,394 @@
+@import url("./public/fonts/gg-sans/stylesheet.css");
+
+body {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #313338;
+  overflow-y: scroll
+}
+
+nav {
+  background-color: green;
+  width: 100%;
+  height: 56px;
+  position: absolute;
+  top: 0;
+}
+
+main {
+  padding-top: 56px;
+  width: 100%;
+  height: calc(100% - 56px - 32px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2em;
+}
+
+.contenedor {
+  background-color: #1e1f22;
+  width: 471px;
+  height: 249px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  row-gap: 1em;
+}
+
+textarea {
+  width: 90%;
+  height: 70%;
+  padding: 5px;
+  background-color: #2b2d31;
+  border-radius: 5px;
+  border: none;
+  resize: none;
+  font-size: 16px;
+  color: #cccccc;
+  box-sizing: border-box;
+  text-transform: lowercase;
+}
+
+textarea:focus { 
+  outline: none !important;
+  box-shadow: 0 0 2px #adadad;
+}
+
+.seccion-botones {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 3em;
+}
+
+.boton {
+  background-color: #5865f2;
+  border-radius: 5px;
+  color: #e7e7e7;
+  height: fit-content;
+  padding: 0 19px;
+  font-family: 'gg sans';
+  font-style: normal;
+  font-size: 14px;
+  line-height: 2.5em;
+  border: none;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), 0 2px 4px rgba(0, 0, 0, 0.05), 0 4px 8px rgba(0, 0, 0, 0.05), 0 8px 16px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+}
+
+.boton:hover {
+  transition: background-color 0.2s ease-in-out;
+  background-color: #4752c4;
+}
+
+.desencriptar {
+  background-color: #23a55a;
+}
+
+.desencriptar:hover {
+  background-color: #1d8b4b;
+}
+
+.borrar {
+  box-shadow: inset 0px 0px 0px 1px #da373c;
+  background-color: transparent;
+}
+
+.borrar:hover {
+  background-color: #da373c;
+}
+
+#sin-ejecutar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  column-gap: 1em;
+}
+
+#sin-ejecutar div {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  width: 40%;
+}
+
+#sin-ejecutar img {
+  width: 48%;
+}
+
+#sin-ejecutar h2 {
+  font-family: 'gg sans';
+  font-style: normal;
+  font-size: 27px;
+  font-weight: 600;
+  color: #dbdbdb;
+  text-align: center;
+}
+
+#sin-ejecutar p {
+  font-family: 'gg sans';
+  font-style: normal;
+  font-size: 16px;
+  font-weight: 400;
+  color: #bbbbbb;
+  text-align: center;
+}
+
+#interfaz-encriptado {
+  display: none;
+  width: 100%;
+  height: 100%;
+}
+
+.copiar {
+  box-shadow: inset 0px 0px 0px 1px #999999;;
+  background-color: transparent;
+}
+
+.copiar:hover {
+  background-color: #999999;
+  color: #000000;
+}
+
+footer {
+  height: 32px;
+  text-align: center;
+  font-size: 0.7rem;
+  font-family: 'gg sans';
+  color: #999;
+}
+
+.dispositivo-incompatible {
+  display: none;
+}
+
+
+@media only screen and (max-height: 250px) and (orientation: landscape) {
+  body {
+    overflow-y: scroll;
+  }
+
+  main {
+    height: calc(100% + 156px + 32px);
+  }
+}
+
+@media only screen and (max-height: 568px) and (orientation: portrait) {
+  body {
+    overflow-y: scroll
+  }
+
+  main {
+    flex-direction: column;
+    height: calc(100% + 156px + 32px);
+  }
+}
+
+@media (orientation: portrait) {
+  @media (max-width: 1280px) {
+    main {
+      flex-direction: column;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .contenedor {
+      width: 22em;
+    }
+
+    .seccion-botones {
+      gap: 0;
+      width: 100%;
+      justify-content: space-evenly;
+    }
+
+    #sin-ejecutar div {
+      width: 70%;
+    }
+
+    #sin-ejecutar img {
+      display: none;
+    }
+
+    #sin-ejecutar h2 {
+      font-size: 2em;
+      margin: 0 0 1em 0;
+    }
+
+    #sin-ejecutar p {
+      font-size: 1em;
+      margin: 0;
+    }
+  }
+
+  @media (max-width: 350px) {
+    .contenedor {
+      width: 19rem;
+      height: 230px;
+    }
+
+    .contenedor textarea {
+      width: 90%;
+    }
+    
+    .seccion-botones {
+      gap: 0.5rem
+    }
+
+    .boton { 
+      padding: 0 0.8rem;
+      font-size: 0.72em;
+    }
+
+    #sin-ejecutar h2 {
+      font-size: 1.9em;
+    }
+
+    footer {
+      font-size: 0.6rem;
+    }
+  }
+
+  @media (max-width: 319px) {
+
+    main {
+      display: none;
+    }
+
+    .dispositivo-incompatible {
+      text-align: center;
+      font-size: 0.7rem;
+      font-family: 'gg sans';
+      display: block;
+      padding-top: 56px;
+      width: 100%;
+      height: calc(100% - 56px - 32px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      flex-wrap: wrap;
+    }
+
+    .dispositivo-incompatible h1 {
+      color: #fff;
+      font-size: 2.7rem;
+      margin: 0;
+    }
+
+    .dispositivo-incompatible p{
+      color: #b3b3b3;
+      font-size: 1.2em;
+    }
+  }
+}
+
+@media (orientation: landscape) {
+  main {
+    flex-direction: row;
+    flex-wrap: nowrap;
+  } 
+
+
+  @media (max-width: 970px) {
+    .contenedor {
+      width: 22em;
+    }
+  
+    .seccion-botones {
+      gap: 0;
+      width: 100%;
+      justify-content: space-evenly;
+    }
+  
+    #sin-ejecutar div {
+      width: 70%;
+    }
+  
+    #sin-ejecutar img {
+      display: none;
+    }
+  
+    #sin-ejecutar h2 {
+      font-size: 2em;
+      margin: 0 0 1em 0;
+    }
+  
+    #sin-ejecutar p {
+      font-size: 1em;
+      margin: 0;
+    }
+  }
+
+  @media (max-width: 667px) {
+    .contenedor {
+      width: 19rem;
+      height: 230px;
+    }
+  
+    .contenedor textarea {
+      width: 90%;
+    }
+    
+    .seccion-botones {
+      gap: 0.5rem
+    }
+  
+    .boton { 
+      padding: 0 0.8rem;
+      font-size: 0.72em;
+    }
+  
+    #sin-ejecutar h2 {
+      font-size: 1.6em;
+    }
+
+    #sin-ejecutar p {
+      font-size: 0.9em;
+    }
+  
+    footer {
+      font-size: 0.6rem;
+    }
+  }
+  
+  @media (max-width: 558px) {
+  
+    main {
+      display: none;
+    }
+  
+    .dispositivo-incompatible {
+      text-align: center;
+      font-size: 0.7rem;
+      font-family: 'gg sans';
+      display: block;
+      padding-top: 56px;
+      width: 100%;
+      height: calc(100% - 56px - 32px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      flex-wrap: wrap;
+    }
+  
+    .dispositivo-incompatible h1 {
+      color: #fff;
+      font-size: 2.7rem;
+      margin: 0;
+    }
+  
+    .dispositivo-incompatible p{
+      color: #b3b3b3;
+      font-size: 1.2em;
+    }
+  }
+}
