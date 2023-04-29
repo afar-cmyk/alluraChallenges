@@ -29,6 +29,23 @@ nav {
   width: 42px;
   height: 42px;
   border-radius: 5px;
+
+}
+
+.icono {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.icono img {
+  width: 90%;
+  height: 70%;
+  filter: invert(1) opacity(0.5);
 }
 
 nav span {
