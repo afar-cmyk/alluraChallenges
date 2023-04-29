@@ -5,15 +5,35 @@ body {
   width: 100vw;
   height: 100vh;
   background-color: #313338;
-  overflow-y: scroll
+  overflow: hidden;
 }
 
 nav {
-  background-color: green;
+  background-color: #18181b;
   width: 100%;
   height: 56px;
   position: absolute;
   top: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1em;
+  padding-inline: 16px;
+  font-family: 'gg sans';
+  font-style: normal;
+  color: #e7e7e7;
+}
+
+.contenedor-icono {
+  background-color: #242429;
+  width: 42px;
+  height: 42px;
+  border-radius: 5px;
+}
+
+nav span {
+  font-weight: 600;
+  font-size: 1.2em;
 }
 
 main {
