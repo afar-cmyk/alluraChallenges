@@ -97,6 +97,14 @@ nav span {
   filter: invert(1) opacity(0.5);
 }
 
+.redes-sociales a:hover {
+  background-color: #404040;
+}
+
+.redes-sociales a:hover img {
+  filter: invert(1) opacity(0.8);
+}
+
 main {
   padding-top: 56px;
   width: 100%;
@@ -249,7 +257,6 @@ footer {
 .dispositivo-incompatible {
   display: none;
 }
-
 
 @media only screen and (max-height: 250px) and (orientation: landscape) {
   body {
