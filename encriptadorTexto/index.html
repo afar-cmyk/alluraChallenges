@@ -7,10 +7,9 @@
   <title>Encriptador de Texto</title>
   <link rel="stylesheet" href="style2.css">
 </head>
+
 <body>
-
   <nav>
-
     <section class="navegacion">
       <a class="contenedor-icono" href="https://afar-cmyk.github.io/oracleOneChallenges/">
         <div class="icono">
@@ -19,65 +18,44 @@
       </a>
       <span>Encriptador y desencriptador</span>
     </section>
-
-
-
-
-    
-    
-
     <section class="redes-sociales">
-
       <a href="https://github.com/afar-cmyk" target="_blank">
         <img src="public/images/github.svg" alt="Logo de GitHub"/>
       </a>
-
       <a href="https://www.linkedin.com/in/afar-cmyk/" target="_blank">
         <img src="public/images/linkedin.svg" alt="Logo de LinkedIn"/>
       </a>
-
       <a href="https://twitter.com/Afar_CMYK" target="_blank">
         <img src="public/images/twitter.svg" alt="Logo de Twitter"/>
       </a>
-
-      
-      
     </section>
-
   </nav>
-
-  <main>
-
-      <section class="contenedor">
-        <textarea placeholder="Ingrese el texto aqui" id="inputEncriptador"></textarea>
-        <div class="seccion-botones">
-          <button class="boton" id="botonEncriptar">Encriptar</button>
-          <button class="boton desencriptar" id="botonDesencriptar">Desencriptar</button>
-          <button class="boton borrar" id="botonBorrar">Borrar</button>
-        </div>
-      </section>
-
-
-
-        <section class="contenedor" id="contenedor-desencriptar">
-          <div id="sin-ejecutar">
-            <img src="public/images/illustration.png" alt="Una persona sentada mirando un diamante con una lupa">
-            <div>
-              <h2>Ningún mensaje fue encontrado</h2>
-              <p>Ingresa el texto que desees encriptar o desencriptar.</p>
-            </div>
-          </div>
   
-          <div class="contenedor" id="interfaz-encriptado">
-            <textarea id="inputTextoEncriptado"></textarea>
-            <div class="seccion-botones">
-              <button class="boton copiar" id="botonCopiar">Copiar</button>
-              <button class="boton borrar" id="botonBorrarEncriptado">Borrar</button>
-            </div>
-          </div>
+  <main>
+    <section class="contenedor">
+      <textarea placeholder="Ingrese el texto aqui" id="inputEncriptador"></textarea>
+      <div class="seccion-botones">
+        <button class="boton" id="botonEncriptar">Encriptar</button>
+        <button class="boton desencriptar" id="botonDesencriptar">Desencriptar</button>
+        <button class="boton borrar" id="botonBorrar">Borrar</button>
+      </div>
+    </section>
+    <section class="contenedor" id="contenedor-desencriptar">
+      <div id="sin-ejecutar">
+        <img src="public/images/illustration.png" alt="Una persona sentada mirando un diamante con una lupa">
+        <div>
+          <h2>Ningún mensaje fue encontrado</h2>
+          <p>Ingresa el texto que desees encriptar o desencriptar.</p>
+        </div>
+      </div>
+      <div class="contenedor" id="interfaz-encriptado">
+        <textarea id="inputTextoEncriptado"></textarea>
+        <div class="seccion-botones">
+          <button class="boton copiar" id="botonCopiar">Copiar</button>
+          <button class="boton borrar" id="botonBorrarEncriptado">Borrar</button>
+        </div>
+      </div>
         </section>
-
-
   </main>
 
   <div class="dispositivo-incompatible">
@@ -88,9 +66,7 @@
   <footer>
     <span>Desarrollado por Andrés Felipe Álvarez. todos los derechos reservados.</span>
   </footer>
- 
 </body>
-
 
 <script src="script.js"></script>
 </html>
